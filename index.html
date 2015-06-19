@@ -1,7 +1,615 @@
 <html>
-  <body>
-    Hello, world!
-    
+<head>
+      <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,600' rel='stylesheet' type='text/css'>
+      <style>
+      body {
+  min-width: 485px;
+}
+
+#landing {
+  height: 100vh;
+  height: calc(100vh - 40px);
+  background: url("img/background_gen.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-weight: 600;
+  font-size: 13px;
+  color: #393939;
+}
+#landing a {
+  color: #0F7DE5;
+}
+#landing header {
+  position: fixed;
+  height: 83px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+#landing header div {
+  position: fixed;
+  top: 13px;
+}
+#landing header #logo {
+  left: 40px;
+}
+#landing header #login {
+  right: 40px;
+}
+#landing main .content {
+  font-weight: 400;
+  float: right;
+  margin: 100px 40px;
+  text-align: right;
+}
+#landing main .content .subtitle1 {
+  font-size: 42px;
+}
+#landing main .content .subtitle1:nth-of-type(1) {
+  padding: 10px 0 0 0;
+}
+#landing main .content .subtitle2 {
+  font-size: 30px;
+  padding: 20px 0;
+}
+@media all and (min-width: 1267px) {
+  #landing main .content .subtitle1 {
+    font-size: 56px;
+  }
+  #landing main .content .subtitle2 {
+    font-size: 40px;
+  }
+}
+#landing main .content .download_buttons img {
+  margin: 0 0 16px 16px;
+  cursor: pointer;
+}
+#landing footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+}
+#landing footer .content {
+  margin: 0 auto;
+}
+#landing footer nav ul {
+  margin: 0;
+  text-align: center;
+}
+#landing footer nav ul li {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 12px 0;
+  padding: 0 10px;
+  line-height: 13px;
+}
+
+
+/* HTML5 Boilerplate
+ * ==|== normalize.css ==========================================================
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+audio:not([controls]) {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.231;
+}
+
+body, button, input, select, textarea {
+  font-family: sans-serif;
+  color: #282828;
+}
+
+::-moz-selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none;
+}
+
+a {
+  color: #006ccc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover, a:active {
+  outline: 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+blockquote {
+  margin: 1em 40px;
+}
+
+dfn {
+  font-style: italic;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+pre, code, kbd, samp {
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+small {
+  font-size: 85%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+dd {
+  margin: 0 0 0 40px;
+}
+
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;
+}
+
+form {
+  margin: 0;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0;
+}
+
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+
+table button, table input {
+  *overflow: auto;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+input:invalid, textarea:invalid {
+  background-color: #f0dddd;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  vertical-align: top;
+}
+
+/* ==|== non-semantic helper classes ======================================== */
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+
+.ir br {
+  display: none;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.cmb-sprite, .cmb-logo-beta, .cmb-logo {
+  background: url('../img/../img/cmb-s49ea11acd1.png') no-repeat;
+}
+
+.cmb-logo-beta {
+  background-position: 0 0;
+  height: 75px;
+  width: 223px;
+}
+
+.cmb-logo {
+  background-position: 0 -75px;
+  height: 75px;
+  width: 223px;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+body ol {
+  list-style-type: decimal;
+}
+body input[type="text"], body input[type="password"] {
+  border: 1px solid #666;
+  margin: 5px 0;
+  padding: 5px;
+  display: block;
+}
+body input[type="submit"], body .blue-button {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #609dd8;
+  margin: auto;
+  text-align: center;
+  display: inline;
+  padding: 7px 10px;
+  font-family: 'Raleway', sans-serif;
+  background: #0063c8;
+  /* IE */
+  -webkit-box-shadow: #97a0a9 0px 2px 5px;
+  -moz-box-shadow: #97a0a9 0px 2px 5px;
+  box-shadow: #97a0a9 0px 2px 5px;
+  text-shadow: #00456d 1px 1px 2px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #0096e0), color-stop(80%, #0063c8));
+  background-image: -webkit-linear-gradient(#0096e0 20%, #0063c8 80%);
+  background-image: -moz-linear-gradient(#0096e0 20%, #0063c8 80%);
+  background-image: -o-linear-gradient(#0096e0 20%, #0063c8 80%);
+  background-image: linear-gradient(#0096e0 20%, #0063c8 80%);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+body input[type="submit"]:hover, body .blue-button:hover {
+  border: 1px solid #00a5dd;
+  -webkit-box-shadow: #97a0a9 0px 2px 5px;
+  -moz-box-shadow: #97a0a9 0px 2px 5px;
+  box-shadow: #97a0a9 0px 2px 5px;
+  text-shadow: #43bae7 1px 1px 2px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #01ade7), color-stop(70%, #0279d5));
+  background-image: -webkit-linear-gradient(#01ade7 30%, #0279d5 70%);
+  background-image: -moz-linear-gradient(#01ade7 30%, #0279d5 70%);
+  background-image: -o-linear-gradient(#01ade7 30%, #0279d5 70%);
+  background-image: linear-gradient(#01ade7 30%, #0279d5 70%);
+}
+body input[type="submit"]:active, body .blue-button:active {
+  background: #0470d0;
+  text-shadow: 0px 0px 1px #aaaaaa;
+  -webkit-box-shadow: #00498b 0 2px 2px 0 inset;
+  -moz-box-shadow: #00498b 0 2px 2px 0 inset;
+  box-shadow: #00498b 0 2px 2px 0 inset;
+}
+body .pink-button {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #e90f62;
+  margin: auto;
+  text-align: center;
+  display: inline;
+  padding: 7px 10px;
+  font-family: 'Raleway', sans-serif;
+  background: #e90f62;
+  /* IE */
+  -webkit-box-shadow: #97a0a9 0px 2px 5px;
+  -moz-box-shadow: #97a0a9 0px 2px 5px;
+  box-shadow: #97a0a9 0px 2px 5px;
+  text-shadow: #00456d 1px 1px 2px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f21692), color-stop(80%, #e90f62));
+  background-image: -webkit-linear-gradient(#f21692 20%, #e90f62 80%);
+  background-image: -moz-linear-gradient(#f21692 20%, #e90f62 80%);
+  background-image: -o-linear-gradient(#f21692 20%, #e90f62 80%);
+  background-image: linear-gradient(#f21692 20%, #e90f62 80%);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+body .pink-button:hover {
+  border: 1px solid #e90f62;
+  -webkit-box-shadow: #97a0a9 0px 2px 5px;
+  -moz-box-shadow: #97a0a9 0px 2px 5px;
+  box-shadow: #97a0a9 0px 2px 5px;
+  text-shadow: #43bae7 1px 1px 2px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #ed54a9), color-stop(80%, #e90f64));
+  background-image: -webkit-linear-gradient(#ed54a9 20%, #e90f64 80%);
+  background-image: -moz-linear-gradient(#ed54a9 20%, #e90f64 80%);
+  background-image: -o-linear-gradient(#ed54a9 20%, #e90f64 80%);
+  background-image: linear-gradient(#ed54a9 20%, #e90f64 80%);
+  /* e90f64--->ed54a9 */
+}
+body .pink-button:active {
+  background: #e90f62;
+  text-shadow: 0px 0px 1px #aaaaaa;
+  -webkit-box-shadow: #00498b 0 2px 2px 0 inset;
+  -moz-box-shadow: #00498b 0 2px 2px 0 inset;
+  box-shadow: #00498b 0 2px 2px 0 inset;
+}
+body input[type="reset"] {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 7px 10px;
+  border: 1px solid #555;
+  margin: auto;
+  text-align: center;
+  display: inline;
+  font-family: 'Raleway', sans-serif;
+  background: #999;
+  /* IE */
+  -webkit-box-shadow: #cccccc 0px 2px 5px;
+  -moz-box-shadow: #cccccc 0px 2px 5px;
+  box-shadow: #cccccc 0px 2px 5px;
+  text-shadow: #555555 1px 1px 2px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #aaaaaa), color-stop(80%, #888888));
+  background-image: -webkit-linear-gradient(#aaaaaa 20%, #888888 80%);
+  background-image: -moz-linear-gradient(#aaaaaa 20%, #888888 80%);
+  background-image: -o-linear-gradient(#aaaaaa 20%, #888888 80%);
+  background-image: linear-gradient(#aaaaaa 20%, #888888 80%);
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+}
+body input[type="reset"]:hover {
+  border: 1px solid #777;
+  -webkit-box-shadow: #cccccc 0px 2px 5px;
+  -moz-box-shadow: #cccccc 0px 2px 5px;
+  box-shadow: #cccccc 0px 2px 5px;
+  text-shadow: #dddddd 1px 1px 2px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #bbbbbb), color-stop(70%, #999999));
+  background-image: -webkit-linear-gradient(#bbbbbb 30%, #999999 70%);
+  background-image: -moz-linear-gradient(#bbbbbb 30%, #999999 70%);
+  background-image: -o-linear-gradient(#bbbbbb 30%, #999999 70%);
+  background-image: linear-gradient(#bbbbbb 30%, #999999 70%);
+}
+body input[type="reset"]:active {
+  background: #0470d0;
+  text-shadow: 0px 0px 1px #aaaaaa;
+  -webkit-box-shadow: #00498b 0 2px 2px 0 inset;
+  -moz-box-shadow: #00498b 0 2px 2px 0 inset;
+  box-shadow: #00498b 0 2px 2px 0 inset;
+}
+body .hide {
+  display: none;
+}
+body #basic-modal-content {
+  display: none;
+}
+body #simplemodal-overlay {
+  background: #000;
+}
+</style>
+<title>The World's First and Only Dating Site for Diplomats | DiploDate</title>
+</head>
+<body>
+  <div id="fb-root"></div>
+
+
+  <div id="landing" class="">
+    <header>
+      <div id="logo">
+        <img src="img/Logo.png"></img>
+      </div>
+    </header>
+
+    <main>
+      <div class="content">
+        <div class="subtitle1">The Only Dating App</div>
+        <div class="subtitle1">for Diplomats!</div>
+        <div class="subtitle2"><i>"Just the Dip."</i></div>
+        <div class="download_buttons">
+          <a href="iphone.html"><img id="gotoappstore" alt="Download on the App Store" title="Download on the App Store" src="img/AppStore.png"></img></a>
+          <a href="android.html"><img id="gotogoogleplay" alt="Download on the App Store" title="Get it on Google play" src="img/GooglePlay.png"></img></a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="content">
+        <nav>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/jobs">Jobs</a></li>
+            <li><a href="/press">Press</a></li>
+            <li><a href="/review">Reviews</a></li>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/privacy">Terms of Service</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/blog">Blog</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
